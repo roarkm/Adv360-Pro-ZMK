@@ -8,9 +8,10 @@
 #define DEFAULT 0
 #define UBUNTU  1
 #define WIN     2
-#define KEYPAD  3
-#define FN      4
-#define MOD     5
+#define PUBG    3
+#define KEYPAD  4
+#define FN      5
+#define MOD     6
 
 #define HYP     RS(RC(RA(RGUI)))
 
@@ -55,9 +56,9 @@
       bindings = <
         &kp EQUAL &kp N1    &kp N2      &kp N3   &kp N4     &kp N5 &tog KEYPAD                                                          &mo MOD &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q     &kp W       &kp E    &kp R      &kp T  &none                                                                &mo WIN &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S       &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LGUI   &kp RGUI   &kp RCTRL            &none   &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X       &kp C    &kp V      &kp B                            &kp LALT   &kp RALT                                &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo FN    &kp GRAVE &kp C_MUTE  &kp LEFT &kp RIGHT                &kp BSPC &kp SPACE &kp ENTER  &kp HYP    &kp ENTER &kp SPACE                 &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
+        &kp ESC   &kp A     &kp S       &kp D    &kp F      &kp G  &none            &kp LCTRL &kp LGUI   &kp RGUI   &kp RCTRL            &none   &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X       &kp C    &kp V      &kp B                             &kp LALT   &kp RALT                                &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo FN    &kp GRAVE &kp C_MUTE  &kp LEFT &kp RIGHT                &kp SPACE &kp BSPC  &kp ENTER  &kp HYP    &kp ENTER &kp SPACE                 &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
       >;
     };
     windows {
@@ -66,7 +67,16 @@
         &kp TAB   &kp Q     &kp W      &kp E    &kp R      &kp T  &kp Y                                                                   &none   &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A     &kp S      &kp D    &kp F      &kp G  &kp H              &kp LCTRL &kp LALT   &kp RCTRL  &kp RGUI             &none   &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X      &kp C    &kp V      &kp B                               &kp LALT   &kp RALT                                &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo FN    &kp GRAVE &kp C_MUTE &kp LEFT &kp RIGHT                &kp BSPC    &kp SPACE &kp END    &kp HYP    &kp ENTER &kp SPACE                 &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
+        &mo FN    &kp GRAVE &kp C_MUTE &kp LEFT &kp RIGHT                &kp SPACE   &kp BSPC  &kp END    &kp HYP    &kp ENTER &kp SPACE                 &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
+      >;
+    };
+    pubg {
+      bindings = <
+        &kp EQUAL &kp N1    &kp N2     &kp N3   &kp N4     &kp N5 &kp 6                                                                   &mo MOD &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W      &kp E    &kp R      &kp T  &kp Y                                                                   &none   &kp Y  &kp U  &kp I     &kp O     &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S      &kp D    &kp F      &kp G  &kp H              &kp LCTRL &pubg_crouch   &kp RCTRL  &kp RGUI         &none   &kp H  &kp J  &kp K     &kp L     &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X      &kp C    &kp V      &kp B                               &kp LALT       &kp RALT                            &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
+        &mo FN    &kp GRAVE &kp C_MUTE &kp LEFT &kp RIGHT                &kp SPACE   &kp BSPC  &kp END        &kp HYP    &kp ENTER &kp SPACE             &kp UP &kp DOWN  &kp LBKT  &kp RBKT &mo FN
       >;
     };
     keypad {
@@ -89,11 +99,11 @@
     };
     mod {
       bindings = <
-        &none &mbp     &ubuntu   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                  &trans                 &none        &none        &none        &none &none &bt BT_CLR
-        &none &none    &none     &none        &none        &none        &bootloader                                                            &bootloader            &none        &none        &none        &none &none &none
-        &none &none    &none     &none        &none        &none        &tog WIN                &none &none &none &none                        &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none &none
-        &none &none    &none     &none        &macro_ver   &none                                      &none &none                                                     &none        &none        &none        &none &none &none
-        &none &none    &none     &none        &none                                       &none &none &none &none &bl BL_TOG &rgb_ug RGB_TOG                                       &bl BL_INC   &bl BL_DEC   &none &none &none
+        &none &mbp     &ubuntu   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                  &trans                 &none        &none        &none        &none &none     &bt BT_CLR
+        &none &none    &none     &none        &none        &none        &bootloader                                                            &bootloader            &none        &none        &none        &none &tog PUBG &none
+        &none &none    &none     &none        &none        &none        &tog WIN                &none &none &none &none                        &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none     &none
+        &none &none    &none     &none        &macro_ver   &none                                      &none &none                                                     &none        &none        &none        &none &none     &none
+        &none &none    &none     &none        &none                                       &none &none &none &none &bl BL_TOG &rgb_ug RGB_TOG                                       &bl BL_INC   &bl BL_DEC   &none &none     &none
       >;
     };
   };
