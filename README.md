@@ -2,12 +2,13 @@
 
 
 ## My Notes on building and flashing
-1. Run docker desktop
-2. Edit `config/adv360.keymap`
-3. Run `make`
-4. On keyboard, enter "bootloader" mode (at this time `Mod + 360`)
+1. Run docker desktop.
+2. Edit `config/adv360.keymap`.
+3. Run `make`.
+4. Plug in left keyboard and enter "bootloader" mode (at this time `Mod + 360`).
 5. Copy `...*-left.uf2` to drive.
 6. Reboot keyboard.
+7. On OSX, use keyboard viewer to verify changes.
 
 
 ## Modifying the keymap
