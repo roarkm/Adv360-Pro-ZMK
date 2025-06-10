@@ -1,5 +1,15 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+
+## My Notes on building and flashing
+1. Run docker desktop
+2. Edit `config/adv360.keymap`
+3. Run `make`
+4. On keyboard, enter "bootloader" mode (at this time `Mod + 360`)
+5. Copy `...*-left.uf2` to drive.
+6. Reboot keyboard.
+
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
